@@ -1,17 +1,17 @@
 (function (blink) {
 	'use strict';
 
-	var McGrawHillStyle = function () {
+	var PearsonND_demoStyle = function () {
 			blink.theme.styles.basic.apply(this, arguments);
 		},
 		page = blink.currentPage;
 
-	McGrawHillStyle.prototype = {
-		bodyClassName: 'content_type_clase_mcgrawhill',
+	PearsonND_demoStyle.prototype = {
+		bodyClassName: 'content_type_clase_PearsonND_demo',
 		toolbar: { name: 'editorial', items: ['Blink_popover'] },
 		extraPlugins: ['blink_popover'],
 		ckEditorStyles: {
-			name: 'mcgrawhill',
+			name: 'PearsonND_demo',
 			styles: [
 				{ name: 'Título 1', element: 'h2', attributes: { 'class': 'bck-title bck-title-1'} },
 				{ name: 'Título 2', element: 'h3', attributes: { 'class': 'bck-title bck-title-2'} },
@@ -159,7 +159,7 @@
 			if(blink.courseInfo && blink.courseInfo.courseDateCreated) var courseYearCreated = new Date(blink.courseInfo.courseDateCreated).getFullYear();
 			var yearCopy = courseYearCreated !== undefined ? courseYearCreated : 2016;
 			$navbarBottom
-				.attr('class', 'mcgrawhill-navbar')
+				.attr('class', 'PearsonND_demo-navbar')
 				.wrapInner('<div class="navbar-content"></div>')
 				.find('ol')
 					.before('<span class="copyright">&copy;' +  yearCopy + '</span>')
@@ -329,7 +329,7 @@
 
 		animateNavbarOnScroll: function () {
 			if (!blink.isApp) return;
-			var $navbar = $('.mcgrawhill-navbar');
+			var $navbar = $('.PearsonND_demo-navbar');
 			var lastScrollTop = 0;
 			$('.js-slider-item').scroll(function () {
 				var scrollTop = $(this).scrollTop();
@@ -467,9 +467,9 @@
 		}
 	};
 
-	McGrawHillStyle.prototype = _.extend({}, new blink.theme.styles.basic(), McGrawHillStyle.prototype);
+	PearsonND_demoStyle.prototype = _.extend({}, new blink.theme.styles.basic(), PearsonND_demoStyle.prototype);
 
-	blink.theme.styles['mcgrawhill'] = McGrawHillStyle;
+	blink.theme.styles['PearsonND_demo'] = PearsonND_demoStyle;
 
 })( blink );
 
